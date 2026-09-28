@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Glamour Podológico JRI | Podología en Surco, Lima</title>
+<meta name="description" content="Podología especializada en Santiago de Surco: hongos en uñas, uñeros, pie diabético y callosidades. Tratamiento exclusivo con Ozono Medicado. Agenda tu cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Baloo+2:wght@600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brand-deep:#3a1147;
+    --brand-navy:#5c1f6e;
+    --brand:#e6127e;
+    --brand-strong:#b80d63;
+    --brand-mid:#ef5fa8;
+    --brand-light:#f7b8dc;
+    --brand-pale:#fdeaf4;
+    --brand-pale-2:#fef6fa;
+    --purple-deep:#2c0f45;
+    --purple:#6a2c91;
+    --gold:#c9a24d;
+    --gold-light:#e8cd93;
+    --text:#2a1730;
+    --muted:#7c6b84;
+    --white:#ffffff;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --shadow-soft:0 20px 45px -18px rgba(58,17,71,0.35);
+    --safe-t:env(safe-area-inset-top,0px);
+    --safe-b:env(safe-area-inset-bottom,0px);
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:92px;}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    color:var(--text);
+    background:var(--white);
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%; display:block;}
+  a{text-decoration:none; color:inherit;}
+  ul{list-style:none; margin:0; padding:0;}
+  h1,h2,h3{font-family:'Baloo 2','Poppins',sans-serif; margin:0; line-height:1.12;}
+  .container{width:100%; max-width:1180px; margin:0 auto; padding:0 24px;}
+  .section{padding:88px 0;}
+  .section-pale{background:linear-gradient(180deg,var(--brand-pale-2) 0%, var(--brand-pale) 100%);}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--brand-pale); color:var(--brand-strong);
+    font-weight:700; font-size:13px; letter-spacing:.04em; text-transform:uppercase;
+    padding:8px 18px; border-radius:999px; margin-bottom:18px;
+  }
+  .eyebrow.on-dark{ background:rgba(255,255,255,0.14); color:#fff; }
+  .section-head{ text-align:center; max-width:640px; margin:0 auto 52px; }
+  .section-head h2{ font-size:clamp(28px,4vw,40px); color:var(--brand-deep); }
+  .section-head p{ color:var(--muted); font-size:17px; margin-top:14px; line-height:1.6; }
+  .accent{ color:var(--brand); }
+  .script{ font-family:'Caveat',cursive; font-weight:700; color:var(--brand); font-size:1.35em; display:block; line-height:1; margin-bottom:2px; }
+
+  /* Buttons */
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:16px 30px; border-radius:999px; font-weight:700; font-size:16px;
+    cursor:pointer; border:2px solid transparent; transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{ background:linear-gradient(135deg,var(--brand) 0%, var(--brand-strong) 100%); color:#fff; box-shadow:0 14px 30px -10px rgba(230,18,126,0.55); }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 18px 36px -10px rgba(230,18,126,0.6); }
+  .btn-ghost{ background:#fff; color:var(--brand-strong); border-color:var(--brand-light); }
+  .btn-ghost:hover{ background:var(--brand-pale); transform:translateY(-2px); }
+  .btn-ghost.on-dark{ background:transparent; color:#fff; border-color:rgba(255,255,255,0.55); }
+  .btn-ghost.on-dark:hover{ background:rgba(255,255,255,0.12); }
+  .btn svg{ width:20px; height:20px; flex:none; }
+
+  /* HEADER */
+  header{
+    position:sticky; top:0; z-index:1000;
+    background:rgba(255,255,255,0.92); backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(58,17,71,0.06);
+    padding-top:var(--safe-t);
+  }
+  .nav-wrap{ display:flex; align-items:center; justify-content:space-between; height:78px; }
+  .brand{ display:flex; align-items:center; }
+  .brand img{ height:46px; width:auto; }
+  nav.main-nav{ display:flex; align-items:center; gap:34px; }
+  nav.main-nav a{ font-weight:600; font-size:15px; color:var(--brand-deep); position:relative; padding:4px 0; }
+  nav.main-nav a::after{ content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--brand); transition:width .2s ease; }
+  nav.main-nav a:hover::after{ width:100%; }
+  .header-cta{ display:flex; align-items:center; gap:18px; }
+  .burger{ display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:pointer; padding:8px; }
+  .burger span{ width:24px; height:2.5px; background:var(--brand-deep); border-radius:2px; }
+
+  /* HERO */
+  .hero{ position:relative; padding:70px 0 90px; overflow:hidden; }
+  .hero-blob{ position:absolute; border-radius:50%; filter:blur(2px); z-index:0; }
+  .hero-blob.b1{ width:420px; height:420px; background:radial-gradient(circle at 30% 30%, var(--brand-light), transparent 70%); top:-140px; right:-120px; opacity:.5; }
+  .hero-blob.b2{ width:280px; height:280px; background:radial-gradient(circle at 30% 30%, var(--gold-light), transparent 70%); bottom:-80px; left:-100px; opacity:.55; }
+  .hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center; }
+  .hero h1{ font-size:clamp(36px,5vw,54px); color:var(--brand-deep); }
+  .hero h1 .accent{ color:var(--brand); }
+  .hero p.lead{ margin-top:20px; font-size:18px; line-height:1.65; color:var(--muted); max-width:480px; }
+  .hero-actions{ display:flex; gap:16px; margin-top:32px; flex-wrap:wrap; }
+  .hero-trust{ display:flex; gap:26px; margin-top:36px; flex-wrap:wrap; }
+  .hero-trust .item{ display:flex; align-items:center; gap:10px; font-size:14px; font-weight:600; color:var(--brand-navy); }
+  .hero-trust .item .ico{ width:34px; height:34px; border-radius:50%; background:var(--brand-pale); display:flex; align-items:center; justify-content:center; flex:none; }
+  .hero-trust .item .ico svg{ width:17px; height:17px; }
+
+  .hero-media{ position:relative; }
+  .hero-media .frame{
+    position:relative; border-radius:32px; overflow:hidden; box-shadow:var(--shadow-soft);
+    border:6px solid #fff;
+  }
+  .hero-media .frame img{ width:100%; height:100%; object-fit:cover; display:block; aspect-ratio:4/5; }
+  .hero-media .badge-float{
+    position:absolute; bottom:-22px; left:-22px; background:#fff; border-radius:20px;
+    padding:16px 20px; box-shadow:0 16px 34px -14px rgba(58,17,71,0.35);
+    display:flex; align-items:center; gap:12px; max-width:230px;
+  }
+  .hero-media .badge-float .dot{ width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-strong)); display:flex; align-items:center; justify-content:center; flex:none; }
+  .hero-media .badge-float .dot svg{ width:22px; height:22px; color:#fff; }
+  .hero-media .badge-float strong{ display:block; font-size:14px; color:var(--brand-deep); font-family:'Baloo 2'; }
+  .hero-media .badge-float span{ font-size:12px; color:var(--muted); }
+
+  /* wave divider */
+  .wave{ display:block; width:100%; line-height:0; }
+  .wave svg{ width:100%; height:auto; display:block; }
+
+  /* TRATAMOS grid */
+  .tratamientos-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .tcard{
+    background:#fff; border:1px solid rgba(58,17,71,0.08); border-radius:var(--radius-md);
+    padding:26px 20px; display:flex; flex-direction:column; align-items:flex-start; gap:14px;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .tcard:hover{ transform:translateY(-4px); box-shadow:0 18px 34px -18px rgba(58,17,71,0.28); border-color:transparent; }
+  .tcard .check{
+    width:42px; height:42px; border-radius:50%; background:linear-gradient(135deg,var(--brand),var(--brand-strong));
+    display:flex; align-items:center; justify-content:center; flex:none;
+  }
+  .tcard .check svg{ width:20px; height:20px; color:#fff; }
+  .tcard h3{ font-family:'Poppins'; font-weight:700; font-size:15.5px; color:var(--brand-deep); line-height:1.35; }
+  .tratamientos-cta{ text-align:center; margin-top:46px; }
+  .tratamientos-cta p{ color:var(--muted); margin-bottom:16px; font-size:15.5px; }
+  .chips-row{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-bottom:26px; }
+  .chip{ background:#fff; border:1.5px solid var(--gold-light); color:var(--brand-navy); font-weight:700; font-size:13px; padding:8px 18px; border-radius:999px; }
+
+  /* NOSOTROS - feature blocks */
+  .feature-block{ display:grid; grid-template-columns:1fr 1fr; gap:58px; align-items:center; }
+  .feature-block + .feature-block{ margin-top:96px; }
+  .feature-block.reverse .feature-media{ order:2; }
+  .feature-media img{ border-radius:var(--radius-lg); box-shadow:var(--shadow-soft); border:6px solid #fff; width:100%; }
+  .feature-label{ display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-weight:800; font-size:13px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:14px; }
+  .feature-text h3{ font-size:clamp(24px,3vw,32px); color:var(--brand-deep); margin-bottom:16px; }
+  .feature-text p{ color:var(--muted); font-size:16px; line-height:1.65; margin-bottom:22px; }
+  .feature-list{ display:flex; flex-direction:column; gap:14px; margin-bottom:28px; }
+  .feature-list li{ display:flex; align-items:flex-start; gap:12px; font-size:15px; color:var(--text); font-weight:500; }
+  .feature-list .fico{ width:26px; height:26px; border-radius:50%; background:var(--brand-pale); display:flex; align-items:center; justify-content:center; flex:none; margin-top:1px; }
+  .feature-list .fico svg{ width:14px; height:14px; color:var(--brand-strong); }
+
+  .specialist-circle{ width:100%; max-width:340px; margin:0 auto; aspect-ratio:1/1; border-radius:50%; padding:8px; background:linear-gradient(135deg,var(--brand-light),var(--gold-light)); box-shadow:0 18px 40px -18px rgba(58,17,71,0.4); }
+  .specialist-circle img{ width:100%; height:100%; border-radius:50%; object-fit:cover; border:6px solid #fff; }
+
+  /* REVIEWS */
+  .reviews-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:22px; margin-bottom:44px; }
+  .google-rating{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+  .google-logo-row{ display:flex; align-items:center; gap:10px; }
+  .google-logo-row svg{ width:30px; height:30px; }
+  .google-logo-row span{ font-family:'Poppins'; font-weight:700; font-size:21px; color:var(--brand-deep); }
+  .google-rating .stars-row{ display:flex; align-items:center; gap:8px; }
+  .google-rating .stars{ color:#f5a623; font-size:17px; letter-spacing:2px; }
+  .google-rating .stars-row small{ color:var(--muted); font-size:13.5px; font-weight:600; }
+  .reviews-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .review-card{
+    background:#fff; border:1px solid rgba(58,17,71,0.08); border-radius:var(--radius-md);
+    padding:26px; box-shadow:0 16px 32px -24px rgba(58,17,71,0.3);
+    display:flex; flex-direction:column; gap:14px;
+  }
+  .review-head{ display:flex; align-items:flex-start; gap:12px; }
+  .review-avatar{ width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:#fff; font-weight:700; font-size:16px; flex:none; font-family:'Baloo 2'; }
+  .review-name-wrap{ min-width:0; }
+  .review-name-wrap strong{ display:block; font-size:14.5px; color:var(--brand-deep); line-height:1.3; }
+  .review-name-wrap .meta{ display:block; font-size:11.5px; color:var(--muted); margin-top:2px; }
+  .review-rating{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .review-rating .stars{ color:#f5a623; font-size:14px; letter-spacing:1px; }
+  .review-rating .date{ font-size:12px; color:var(--muted); }
+  .review-text{ font-size:14px; line-height:1.62; color:var(--text); flex:1; }
+  .review-foot{ display:flex; align-items:center; gap:7px; padding-top:8px; border-top:1px solid rgba(58,17,71,0.06); }
+  .review-foot svg{ width:15px; height:15px; }
+  .review-foot span{ font-size:12px; color:var(--muted); }
+  .reviews-cta{ text-align:center; margin-top:44px; }
+  .review-invite{
+    margin-top:36px; background:#fff; border:1.5px dashed var(--brand-light); border-radius:var(--radius-md);
+    padding:28px 30px; display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .review-invite .ri-text{ display:flex; align-items:center; gap:16px; }
+  .review-invite .ri-ico{ width:48px; height:48px; border-radius:50%; background:var(--brand-pale); display:flex; align-items:center; justify-content:center; flex:none; }
+  .review-invite .ri-ico svg{ width:24px; height:24px; color:#f5a623; }
+  .review-invite strong{ display:block; font-size:15.5px; color:var(--brand-deep); font-family:'Poppins'; font-weight:700; }
+  .review-invite span{ font-size:13.5px; color:var(--muted); }
+
+  /* WHY US */
+  .why-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .wcard{ background:#fff; border-radius:var(--radius-md); padding:30px 22px; text-align:center; box-shadow:0 14px 30px -20px rgba(58,17,71,0.22); }
+  .wcard .ico{ width:56px; height:56px; border-radius:16px; background:var(--brand-pale); display:flex; align-items:center; justify-content:center; margin:0 auto 16px; }
+  .wcard .ico svg{ width:26px; height:26px; color:var(--brand-strong); }
+  .wcard h3{ font-size:16px; color:var(--brand-deep); margin-bottom:8px; font-family:'Poppins'; font-weight:700; }
+  .wcard p{ font-size:13.5px; color:var(--muted); line-height:1.55; }
+
+  /* UBICACION */
+  .location{
+    background:linear-gradient(135deg,var(--purple-deep) 0%, var(--purple) 55%, var(--brand) 100%);
+    border-radius:36px; padding:60px; color:#fff; position:relative; overflow:hidden;
+  }
+  .location::before{ content:""; position:absolute; width:340px; height:340px; border-radius:50%; background:rgba(255,255,255,0.08); top:-140px; right:-100px; }
+  .location::after{ content:""; position:absolute; width:220px; height:220px; border-radius:50%; background:rgba(255,255,255,0.07); bottom:-100px; left:-60px; }
+  .location-grid{ position:relative; z-index:1; display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:center; }
+  .location h2{ font-size:clamp(26px,3.6vw,34px); margin-bottom:16px; }
+  .location p.sub{ color:rgba(255,255,255,0.82); font-size:16px; line-height:1.6; max-width:440px; margin-bottom:28px;}
+  .loc-detail{ display:flex; gap:14px; margin-bottom:18px; }
+  .loc-detail .ico{ width:42px; height:42px; border-radius:12px; background:rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; flex:none; }
+  .loc-detail .ico svg{ width:20px; height:20px; }
+  .loc-detail strong{ display:block; font-size:15px; margin-bottom:2px; }
+  .loc-detail span{ font-size:14px; color:rgba(255,255,255,0.78); }
+  .location-actions{ display:flex; gap:14px; margin-top:28px; flex-wrap:wrap; }
+  .location-card{
+    background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.18);
+    border-radius:24px; padding:34px; backdrop-filter:blur(4px);
+  }
+  .location-card .badge-horario{ display:inline-block; background:rgba(255,255,255,0.16); padding:8px 16px; border-radius:999px; font-size:13px; font-weight:700; margin-bottom:22px; }
+  .location-card .big-phone{ font-family:'Baloo 2'; font-size:30px; font-weight:700; margin:6px 0 2px; }
+  .location-card .row{ display:flex; align-items:center; gap:12px; margin-bottom:22px; }
+  .location-card .row .ico{ width:46px; height:46px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; flex:none; }
+  .location-card .row .ico svg{ width:22px; height:22px; color:var(--brand-strong); }
+
+  /* MAP */
+  .map-embed{
+    margin-top:36px; border-radius:28px; overflow:hidden; border:6px solid #fff;
+    box-shadow:var(--shadow-soft); background:var(--brand-pale);
+  }
+  .map-embed iframe{ width:100%; height:380px; display:block; border:0; }
+  .map-caption{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-top:16px; }
+  .map-caption span{ font-size:14px; color:var(--muted); }
+  .map-caption a{ font-size:14px; font-weight:700; color:var(--brand-strong); }
+
+  /* FOOTER */
+  footer{ background:var(--purple-deep); color:rgba(255,255,255,0.75); padding:52px 0 28px; }
+  .footer-grid{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  .footer-brand{ display:flex; align-items:center; }
+  .footer-brand img{ height:56px; width:auto; }
+  .footer-links{ display:flex; gap:40px; flex-wrap:wrap; }
+  .footer-links h4{ color:#fff; font-size:14px; margin-bottom:14px; font-family:'Poppins'; font-weight:700; }
+  .footer-links li{ margin-bottom:9px; font-size:14px; }
+  .footer-links a:hover{ color:#fff; }
+  .footer-bottom{ display:flex; justify-content:space-between; padding-top:22px; font-size:13px; flex-wrap:wrap; gap:10px; }
+
+  /* WHATSAPP FLOAT */
+  .wa-float{
+    position:fixed; right:22px; bottom:calc(22px + var(--safe-b)); z-index:1200;
+    width:62px; height:62px; border-radius:50%;
+    background:linear-gradient(135deg,var(--brand),var(--brand-strong));
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 14px 30px -8px rgba(230,18,126,0.6);
+    animation:pulse 2.4s infinite;
+  }
+  .wa-float svg{ width:30px; height:30px; color:#fff; }
+  @keyframes pulse{
+    0%{ box-shadow:0 0 0 0 rgba(230,18,126,0.55); }
+    70%{ box-shadow:0 0 0 16px rgba(230,18,126,0); }
+    100%{ box-shadow:0 0 0 0 rgba(230,18,126,0); }
+  }
+
+  /* reveal animation */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+
+  /* RESPONSIVE */
+  @media (max-width:980px){
+    .tratamientos-grid{ grid-template-columns:repeat(2,1fr); }
+    .why-grid{ grid-template-columns:repeat(2,1fr); }
+    .reviews-grid{ grid-template-columns:repeat(2,1fr); }
+    .location-grid{ grid-template-columns:1fr; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-media{ order:-1; max-width:420px; margin:0 auto; }
+    .feature-block{ grid-template-columns:1fr; }
+    .feature-block.reverse .feature-media{ order:-1; }
+    .feature-block .feature-media{ order:-1; max-width:420px; margin:0 auto; }
+  }
+  @media (max-width:760px){
+    nav.main-nav{ position:fixed; top:78px; left:0; right:0; background:#fff; flex-direction:column; align-items:flex-start; gap:0; padding:10px 24px 20px; box-shadow:0 16px 30px -18px rgba(58,17,71,0.3); transform:translateY(-130%); transition:transform .25s ease; }
+    nav.main-nav.open{ transform:translateY(0); }
+    nav.main-nav a{ width:100%; padding:14px 0; border-bottom:1px solid rgba(58,17,71,0.06); }
+    .burger{ display:flex; }
+    .header-cta .btn-label{ display:none; }
+    .section{ padding:64px 0; }
+    .why-grid{ grid-template-columns:1fr; }
+    .reviews-grid{ grid-template-columns:1fr; }
+    .reviews-top{ flex-direction:column; align-items:flex-start; }
+    .review-invite{ flex-direction:column; text-align:center; }
+    .review-invite .ri-text{ flex-direction:column; text-align:center; }
+    .tratamientos-grid{ grid-template-columns:1fr 1fr; }
+    .feature-block + .feature-block{ margin-top:64px; }
+    .location{ padding:36px 22px; border-radius:26px; }
+    .location-card{ padding:26px; }
+    .map-embed iframe{ height:280px; }
+    .footer-grid{ flex-direction:column; }
+    .footer-bottom{ flex-direction:column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav-wrap">
+    <a class="brand" href="#inicio">
+      <img src="Imagenes/glamour-logo-transparente.png" alt="Glamour Podológico JRI">
+    </a>
+    <nav class="main-nav" id="mainNav">
+      <a href="#inicio">Inicio</a>
+      <a href="#tratamientos">Tratamientos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#ubicacion">Ubicación</a>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-primary" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Glamour%20Podol%C3%B3gico%20JRI" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.47 3.58 1.36 5.14L2 22l5.09-1.46a9.9 9.9 0 0 0 4.95 1.33h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.18 3.03 14.69 2 12.04 2Zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.02.87.81-2.95-.2-.3a8.22 8.22 0 0 1-1.26-4.4c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.11-8.36 8.11Zm4.52-6.11c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.41-.42-.56-.42-.14 0-.31-.01-.47-.01-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>
+        <span class="btn-label">Agenda tu cita</span>
+      </a>
+      <button class="burger" id="burgerBtn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="container hero-grid">
+    <div class="reveal in">
+      <span class="eyebrow">📍 Podología especializada · Santiago de Surco</span>
+      <h1><span class="script">Dile adiós a los</span>hongos y al <span class="accent">dolor de uñero</span></h1>
+      <p class="lead">Tratamos hongos en las uñas, uñeros, pie diabético y callosidades con Ozono Medicado: resultados visibles desde la primera sesión y sin dolor. Más de 200 pacientes ya confían en Glamour Podológico JRI.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Glamour%20Podol%C3%B3gico%20JRI" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.47 3.58 1.36 5.14L2 22l5.09-1.46a9.9 9.9 0 0 0 4.95 1.33h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.18 3.03 14.69 2 12.04 2Zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.02.87.81-2.95-.2-.3a8.22 8.22 0 0 1-1.26-4.4c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.11-8.36 8.11Zm4.52-6.11c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.41-.42-.56-.42-.14 0-.31-.01-.47-.01-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>
+          Agenda tu cita por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="#tratamientos">Ver tratamientos</a>
+      </div>
+      <div class="hero-trust">
+        <div class="item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#e6127e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6 9 4.6c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg></span>
+          +200 pacientes atendidos
+        </div>
+        <div class="item">
+          <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#e6127e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          Jr. Vista Alegre 140, Surco
+        </div>
+      </div>
+    </div>
+    <div class="hero-media reveal in">
+      <div class="frame">
+        <img src="Imagenes/especialista2.jpg" alt="Grismar Contreras, podóloga de Glamour Podológico JRI, con equipo profesional de podología" style="object-position:center 15%;">
+      </div>
+      <div class="badge-float">
+        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div>
+          <strong>Ozono Medicado exclusivo</strong>
+          <span>Tecnología Ozono Total Feet</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave" style="margin-top:-2px;">
+  <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#fdeaf4" d="M0,32 C240,80 480,0 720,24 C960,48 1200,88 1440,40 L1440,90 L0,90 Z"/></svg>
+</div>
+
+<section class="section section-pale" id="tratamientos">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Tratamos</span>
+      <h2>Soluciones para cada molestia en tus pies</h2>
+      <p>Diagnóstico y tratamiento especializado, con tecnología de ozono medicado, para que vuelvas a caminar sin dolor ni vergüenza.</p>
+    </div>
+    <div class="tratamientos-grid">
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Hongos en las uñas (onicomicosis)</h3>
+      </div>
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Uñas encarnadas (uñeros)</h3>
+      </div>
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Pie de atleta</h3>
+      </div>
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Pie diabético</h3>
+      </div>
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Callosidades y durezas</h3>
+      </div>
+      <div class="tcard reveal">
+        <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>Cuidado preventivo del pie</h3>
+      </div>
+    </div>
+    <div class="tratamientos-cta reveal">
+      <p>¿Buscas ozonoterapia, cosmiatría o manicure? También lo tenemos.</p>
+      <div class="chips-row">
+        <span class="chip">Ozonoterapia</span>
+        <span class="chip">Cosmiatría</span>
+        <span class="chip">Manicure</span>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/51974011490?text=Hola%2C%20tengo%20una%20consulta%20sobre%20un%20tratamiento%20de%20podolog%C3%ADa" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="nosotros">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Nuestra diferencia</span>
+      <h2>Tecnología y experiencia al servicio de tus pies</h2>
+      <p>Combinamos técnica profesional con Ozono Total Feet, la tecnología que nos distingue en Surco.</p>
+    </div>
+
+    <div class="feature-block reveal">
+      <div class="feature-text">
+        <span class="feature-label">⚡ Tecnología exclusiva</span>
+        <h3>Ozono Total Feet: 2 tecnologías en 1 tratamiento</h3>
+        <p>Ozono medicado + succión en un solo equipo para eliminar los hongos desde la raíz, sin dolor y con resultados visibles desde la primera sesión.</p>
+        <ul class="feature-list">
+          <li><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Elimina hongos y mal olor de raíz</li>
+          <li><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Resultados eficaces desde la 1ª sesión</li>
+          <li><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Tratamiento indoloro, en consulta</li>
+          <li><span class="fico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span> Únicos en la zona con esta tecnología</li>
+        </ul>
+        <a class="btn btn-primary" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20tratamiento%20de%20hongos%20con%20Ozono%20Total%20Feet" target="_blank" rel="noopener">Quiero tratar mis hongos</a>
+      </div>
+      <div class="feature-media">
+        <img src="Imagenes/crops/especialista3-crop.jpg" alt="Tratamiento de podología en consulta, Glamour Podológico JRI">
+      </div>
+    </div>
+
+    <div class="feature-block reverse reveal">
+      <div class="feature-text">
+        <span class="feature-label">🦶 Tu podóloga</span>
+        <h3>Grismar Contreras</h3>
+        <p>Podóloga especializada en el cuidado integral del pie y fundadora de Glamour Podológico JRI. Atención profesional, personalizada y con tecnología de última generación para que cada paciente recupere la confianza de caminar sin dolor.</p>
+        <div class="hero-trust" style="margin-top:0;">
+          <div class="item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#e6127e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/></svg></span>
+            Atención personalizada
+          </div>
+          <div class="item">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#e6127e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6 9 4.6c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg></span>
+            +200 pacientes felices
+          </div>
+        </div>
+      </div>
+      <div class="feature-media">
+        <div class="specialist-circle">
+          <img src="Imagenes/especialista.jpg" alt="Grismar Contreras, podóloga fundadora de Glamour Podológico JRI">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-pale" id="resenas">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:36px;">
+      <span class="eyebrow">La confianza que nos ganamos</span>
+      <h2>Lo que dicen nuestros pacientes en Google</h2>
+      <p>Reseñas reales, publicadas por pacientes de Glamour Podológico JRI en Google Maps.</p>
+    </div>
+
+    <div class="reviews-top reveal">
+      <div class="google-rating">
+        <div class="google-logo-row">
+          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.6C29.7 35.5 27 36.5 24 36.5c-5.3 0-9.7-3.4-11.3-8l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C40.9 36.9 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+          <span>Google</span>
+        </div>
+        <div class="stars-row">
+          <span class="stars">★★★★★</span>
+          <small>Reseñas verificadas de pacientes</small>
+        </div>
+      </div>
+      <a class="btn btn-ghost" href="https://maps.app.goo.gl/VrnAx9JsQShwGtTY6" target="_blank" rel="noopener">Ver reseñas en Google</a>
+    </div>
+
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-head">
+          <div class="review-avatar" style="background:linear-gradient(135deg,var(--brand),var(--brand-strong));">D</div>
+          <div class="review-name-wrap">
+            <strong>Dennys Cordova</strong>
+            <span class="meta">1 reseña · 3 fotos</span>
+          </div>
+        </div>
+        <div class="review-rating"><span class="stars">★★★★★</span><span class="date">Hace 6 meses</span></div>
+        <p class="review-text">Soy paciente desde agosto del 2025. Tenía hongos en todas las uñas de ambos pies desde hace más de 5 años. La podóloga Grismar me hizo una profilaxis plus, sin dolor, y complementó el tratamiento con soluciones micóticas y ozono. En un mes ya vi resultados en el crecimiento de mis uñas sanas. Sin duda recomiendo a la podóloga Grismar por su profesionalismo, mucho conocimiento y calidad humana. Mis pies sanos y yo feliz.</p>
+        <div class="review-foot">
+          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.6C29.7 35.5 27 36.5 24 36.5c-5.3 0-9.7-3.4-11.3-8l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C40.9 36.9 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+          <span>Publicado en Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-head">
+          <div class="review-avatar" style="background:linear-gradient(135deg,var(--purple),var(--purple-deep));">E</div>
+          <div class="review-name-wrap">
+            <strong>Enrique Mannucci</strong>
+            <span class="meta">Local Guide · 14 reseñas · 22 fotos</span>
+          </div>
+        </div>
+        <div class="review-rating"><span class="stars">★★★★★</span><span class="date">Hace 8 meses</span></div>
+        <p class="review-text">Muy buena atención. Es bien detallista y cuidadosa.</p>
+        <div class="review-foot">
+          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.6C29.7 35.5 27 36.5 24 36.5c-5.3 0-9.7-3.4-11.3-8l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C40.9 36.9 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+          <span>Publicado en Google</span>
+        </div>
+      </div>
+
+      <div class="review-card reveal">
+        <div class="review-head">
+          <div class="review-avatar" style="background:linear-gradient(135deg,var(--gold),#8a6a24);">C</div>
+          <div class="review-name-wrap">
+            <strong>Cesar Ubillas</strong>
+            <span class="meta">Local Guide · 139 reseñas · 52 fotos</span>
+          </div>
+        </div>
+        <div class="review-rating"><span class="stars">★★★★★</span><span class="date">Hace 8 meses</span></div>
+        <p class="review-text">100% recomendado, lugar, limpieza, atención, comodidad, trato, todo 10/10.</p>
+        <div class="review-foot">
+          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3c-1.6 4.6-6 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.7-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 15.1 18.9 12 24 12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.5 0 10.4-1.9 14.3-5.1l-6.6-5.6C29.7 35.5 27 36.5 24 36.5c-5.3 0-9.7-3.4-11.3-8l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6C40.9 36.9 44 31 44 24c0-1.3-.1-2.7-.4-3.5z"/></svg>
+          <span>Publicado en Google</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-invite reveal">
+      <div class="ri-text">
+        <span class="ri-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.5 15 9l7 1-5.2 4.9L18 22l-6-3.5L6 22l1.2-7.1L2 10l7-1 3-6.5Z"/></svg></span>
+        <div>
+          <strong>¿Ya fuiste paciente?</strong>
+          <span>Cuéntale a otros cómo te fue, nos ayuda muchísimo.</span>
+        </div>
+      </div>
+      <a class="btn btn-ghost" href="https://search.google.com/local/writereview?placeid=ChIJvUJaNQC5BZERFC9UlPQxeiE" target="_blank" rel="noopener">Dejar una reseña en Google</a>
+    </div>
+
+    <div class="reviews-cta reveal">
+      <a class="btn btn-primary" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Glamour%20Podol%C3%B3gico%20JRI" target="_blank" rel="noopener">Quiero mi cita también</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow">Por qué elegirnos</span>
+      <h2>Tu comodidad y seguridad, primero</h2>
+    </div>
+    <div class="why-grid">
+      <div class="wcard reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b80d63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+        <h3>Tecnología Ozono Medicado</h3>
+        <p>Únicos en Surco con Ozono Total Feet: 2 tecnologías en 1 tratamiento.</p>
+      </div>
+      <div class="wcard reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b80d63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 4.6c-1.6-1.6-4.2-1.6-5.8 0L12 7.6 9 4.6c-1.6-1.6-4.2-1.6-5.8 0-1.6 1.6-1.6 4.2 0 5.8L12 19l8.8-8.6c1.6-1.6 1.6-4.2 0-5.8Z"/></svg></div>
+        <h3>Trato personalizado</h3>
+        <p>Atención profesional y cercana, adaptada a cada paciente.</p>
+      </div>
+      <div class="wcard reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b80d63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 6v6c0 5 3.8 9 9 10 5.2-1 9-5 9-10V6l-9-4Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Higiene y protocolos</h3>
+        <p>Equipos e instrumental con protocolos estrictos de bioseguridad.</p>
+      </div>
+      <div class="wcard reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#b80d63" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.5 13.5 7 22l5-3 5 3-1.5-8.5"/></svg></div>
+        <h3>Resultados que se sienten</h3>
+        <p>+200 pacientes ya recuperaron la salud de sus pies con nosotros.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="ubicacion">
+  <div class="container">
+    <div class="location reveal">
+      <div class="location-grid">
+        <div>
+          <span class="eyebrow on-dark">Sede Surco</span>
+          <h2>Visítanos o agenda tu cita por WhatsApp</h2>
+          <p class="sub">Estamos en Urb. Sagitario, Santiago de Surco — atención con cita previa.</p>
+
+          <div class="loc-detail">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><strong>Jr. Vista Alegre 140</strong><span>Urb. Sagitario, Surco - Lima, Perú</span></div>
+          </div>
+          <div class="loc-detail">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><strong>Lunes a sábado: 9:00 am – 9:00 pm</strong><span>Almuerzo: 1:00 pm – 2:00 pm</span></div>
+          </div>
+          <div class="loc-detail">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span>
+            <div><strong>Domingo: 10:00 am – 3:00 pm</strong><span>Horario reducido</span></div>
+          </div>
+
+          <div class="location-actions">
+            <a class="btn btn-primary" style="background:#fff;color:var(--brand-strong);box-shadow:none;" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Glamour%20Podol%C3%B3gico%20JRI" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+            <a class="btn btn-ghost on-dark" href="https://maps.app.goo.gl/VrnAx9JsQShwGtTY6" target="_blank" rel="noopener">Cómo llegar</a>
+          </div>
+        </div>
+
+        <div class="location-card">
+          <span class="badge-horario">🦶 Glamour Podológico JRI</span>
+          <div class="row">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.47 3.58 1.36 5.14L2 22l5.09-1.46a9.9 9.9 0 0 0 4.95 1.33h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.18 3.03 14.69 2 12.04 2Z"/></svg></span>
+            <div>
+              <span style="font-size:13px;color:rgba(255,255,255,0.75);">WhatsApp / Citas</span>
+              <div class="big-phone">974 011 490</div>
+            </div>
+          </div>
+          <p style="font-size:14px;color:rgba(255,255,255,0.78);line-height:1.6;margin:0;">Escríbenos y con gusto te ayudamos a elegir el mejor tratamiento para el cuidado de tus pies.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-embed reveal">
+      <iframe src="https://www.google.com/maps?q=Glamour+Podologico+JRI,+Jr.+Vista+Alegre+140,+Urb.+Sagitario,+Surco,+Lima&output=embed" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación de Glamour Podológico JRI en Surco"></iframe>
+    </div>
+    <div class="map-caption reveal">
+      <span>📍 Jr. Vista Alegre 140, Urb. Sagitario, Surco, Lima</span>
+      <a href="https://maps.app.goo.gl/VrnAx9JsQShwGtTY6" target="_blank" rel="noopener">Abrir en Google Maps →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Imagenes/glamour-logo-blanco-transparente.png" alt="Glamour Podológico JRI">
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#tratamientos">Tratamientos</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#resenas">Reseñas</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Sede Surco</h4>
+          <ul>
+            <li>Jr. Vista Alegre 140, Urb. Sagitario</li>
+            <li>974 011 490</li>
+            <li>Atención con cita previa</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Síguenos</h4>
+          <ul>
+            <li><a href="https://www.instagram.com/glamourpodologico_peru/" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.facebook.com/p/Glamour-Podol%C3%B3gico-61575893167011/" target="_blank" rel="noopener">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Glamour Podológico JRI. Todos los derechos reservados.</span>
+      <span>Sitio creado por Lygia</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/51974011490?text=Hola%2C%20quiero%20agendar%20una%20cita%20en%20Glamour%20Podol%C3%B3gico%20JRI" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.81.47 3.58 1.36 5.14L2 22l5.09-1.46a9.9 9.9 0 0 0 4.95 1.33h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.13-2.9-7C17.18 3.03 14.69 2 12.04 2Zm0 18.14h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.02.87.81-2.95-.2-.3a8.22 8.22 0 0 1-1.26-4.4c0-4.55 3.71-8.26 8.27-8.26 2.21 0 4.28.86 5.84 2.42a8.2 8.2 0 0 1 2.42 5.84c0 4.56-3.71 8.11-8.36 8.11Zm4.52-6.11c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.78.96-.14.16-.29.18-.54.06-.25-.12-1.04-.38-1.99-1.22-.73-.65-1.23-1.46-1.37-1.71-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.83-.2-.48-.41-.42-.56-.42-.14 0-.31-.01-.47-.01-.16 0-.43.06-.65.31-.23.25-.86.84-.86 2.04 0 1.2.88 2.37 1 2.53.12.16 1.73 2.64 4.19 3.7.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.46-.6 1.66-1.17.21-.58.21-1.07.14-1.17-.06-.11-.22-.17-.47-.29Z"/></svg>
+</a>
+
+<script>
+  // Mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const nav = document.getElementById('mainNav');
+  burger.addEventListener('click', () => nav.classList.toggle('open'));
+  nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
